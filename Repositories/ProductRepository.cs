@@ -27,7 +27,7 @@ public Product Save(Product product){
     connection.Execute("INSERT INTO Products VALUES(@Id, @Name, @Price, @Active)",product );
     return product;
 }
-// Deleta um produto na tabela
+
 public void Delete(int id){
     using var connection = new SqliteConnection(databaseConfig.ConnectionString);
     connection.Open();
