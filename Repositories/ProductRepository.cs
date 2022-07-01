@@ -14,13 +14,13 @@ class ProductRepository
         this.databaseConfig=databaseConfig;
     }
 
-    public IEnumerable<Product> GetAll(){
+public IEnumerable<Product> GetAll(){
         using var connection = new SqliteConnection(databaseConfig.ConnectionString);
         connection.Open();
         return connection.Query<Product>("SELECT * FROM Products");
     }
 
-// Insere um produto na tabela
+
 public Product Save(Product product){
     using var connection = new SqliteConnection(_databaseConfig.ConnectionString);
     connection.Open();
@@ -33,13 +33,13 @@ public void Delete(int id){
     connection.Open();
     connection.Execute("DELETE FROM Products WHERE id = @Id", new {Id = id});
 }
-// Habilita um produto
+
 public void Enable(int id){
         using var connection = new SqliteConnection(databaseConfig.ConnectionString);
         connection.Open();
         connection.Execute("UPDATE Products SET active = 1 WHERE id = @Id", new {Id = id});
 }
-// Desabilita um produto
+
 public void Disable(int id){
         using var connection = new SqliteConnection(databaseConfig.ConnectionString);
         connection.Open();
@@ -53,15 +53,13 @@ public void Disable(int id){
         return result;
     }
 
-
-// Retorna os produtos dentro de um intervalo de preço
 public IEnumerable<Product> GetAllWithPriceBetween(double initialPrice, double endPrice){
         using var connection = new SqliteConnection(_databaseConfig.ConnectionString);
         connection.Open();
         return connection.Query<Product>("SELECT * FROM Products WHERE price BETWEEN @InitialPrice AND @EndPrice", new {InitialPrice = initialPrice, EndPrice = endPrice});
     }
 
-// Retorna os produtos com preço acima de um preço especificado
+
 public IEnumerable<Product> GetAllWithPriceHigherThan(double price) {
         using var connection = new SqliteConnection(_databaseConfig.ConnectionString);
         connection.Open();
