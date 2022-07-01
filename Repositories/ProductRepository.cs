@@ -20,7 +20,6 @@ public IEnumerable<Product> GetAll(){
         return connection.Query<Product>("SELECT * FROM Products");
     }
 
-
 public Product Save(Product product){
     using var connection = new SqliteConnection(_databaseConfig.ConnectionString);
     connection.Open();
