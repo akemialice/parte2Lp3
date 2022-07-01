@@ -1,0 +1,5 @@
+C:\Users\IFSP\Desktop\Avaliacao3BimLp3\obj\Debug\net6.0\Avaliacao3BimLp3.csproj.AssemblyReference.cache
+C:\Users\IFSP\Desktop\Avaliacao3BimLp3\obj\Debug\net6.0\Avaliacao3BimLp3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IFSP\Desktop\Avaliacao3BimLp3\obj\Debug\net6.0\Avaliacao3BimLp3.AssemblyInfoInputs.cache
+C:\Users\IFSP\Desktop\Avaliacao3BimLp3\obj\Debug\net6.0\Avaliacao3BimLp3.AssemblyInfo.cs
+C:\Users\IFSP\Desktop\Avaliacao3BimLp3\obj\Debug\net6.0\Avaliacao3BimLp3.csproj.CoreCompileInputs.cache
