@@ -58,7 +58,6 @@ public IEnumerable<Product> GetAllWithPriceBetween(double initialPrice, double e
         return connection.Query<Product>("SELECT * FROM Products WHERE price BETWEEN @InitialPrice AND @EndPrice", new {InitialPrice = initialPrice, EndPrice = endPrice});
     }
 
-
 public IEnumerable<Product> GetAllWithPriceHigherThan(double price){
         using var connection = new SqliteConnection(_databaseConfig.ConnectionString);
         connection.Open();
