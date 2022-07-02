@@ -66,7 +66,7 @@ var modelAction = args[1];
         }
         else
         {
-            Console.WriteLine($"Produto de {id} não encontrado.");
+            Console.WriteLine($"Produto de {id} não foi encontrado.");
         }
     }
 
@@ -81,11 +81,11 @@ var modelAction = args[1];
         }
         else
         {
-            Console.WriteLine($"Produto de {id} não encontrado.");
+            Console.WriteLine($"Produto de {id} não foi encontrado.");
         }
     }
 
-    if(modelAction == "GetAllWithPriceBetween")
+    if(modelAction == "PriceBetween")
     {
         var initialPrice = Convert.ToDouble(args[2]);
         var endPrice = Convert.ToDouble(args[3]);
@@ -102,12 +102,12 @@ var modelAction = args[1];
         }
     }
     
-    if(modelAction == "GetAllWithPriceHigherThan")
+    if(modelAction == "PriceHigherThan")
     {
         var price = Convert.ToDouble(args[2]);
         if(productRepository.GetAllWithPriceHigherThan(price).Count() == 0)
         {
-            Console.WriteLine($"Não encontramos produto com preço maior que R${price}");
+            Console.WriteLine($"Não encontramos produto com preço maior que: R${price}");
         }
         else
         {
@@ -118,25 +118,22 @@ var modelAction = args[1];
         }
     }
     
-    if(modelAction == "GetAllWithAveragePrice")
+    if(modelAction == "AveragePrice")
     {
         if (!(productRepository.GetAll().Count() == 0))
         {
-            Console.WriteLine($"Preço médio dos produtos: R${productRepository.GetAveragePrice()}");
-        }
-        else
-        {
-            Console.WriteLine($"Nenhum produto cadastrado");
+            Console.WriteLine($"Média dos preços dos produtos: R${productRepository.GetAveragePrice()}");
         }
     }
 
 
-    if(modelAction == "GetAllWithPriceLowerThan")
+    if(modelAction == "PriceLowerThan")
     {
         var price = Convert.ToDouble(args[2]);
+        
         if(productRepository.GetAllWithPriceLowerThan(price).Count() == 0)
         {
-            Console.WriteLine($"Não encontramos produto com preço menor que R${price}");
+            Console.WriteLine($"Não encontramos produto com preço menor que: R${price}");
         }
         else
         {
